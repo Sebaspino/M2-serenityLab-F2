@@ -12,8 +12,8 @@ const NavBar = () => {
     return (
         <section>
             <div>
-                <h2>Iniciales: {initials(auth.fullName)}</h2>
-                <p>Nombre: {auth.fullName}</p>
+                <h2>Iniciales: {auth.nombre[0]}{auth.apellido[0]}</h2>
+                <p>Nombre: {auth.nombre} {auth.apellido}</p>
                 <p>Rol: {auth.role}</p>
             </div>
             <nav>
