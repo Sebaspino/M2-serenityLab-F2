@@ -8,7 +8,7 @@ const Home = () => {
 
             <section style={{ position: "relative", height: "100vh", overflow: "hidden" }}>
                 <video autoPlay loop muted style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: -1 }}>
-                    <source src="/videos/banner1.mp4" type="video/mp4" />
+                    <source src="src\assets\video\banner.mp4" type="video/mp4" />
                 </video>
             </section>
 

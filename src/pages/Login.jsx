@@ -4,6 +4,7 @@ import { endpoints } from "../services/api"
 import { saveLocalStorage } from "../helpers/local-storage"
 
 const Login = () => {
+  <NavBarHome />
   const [getEmail, setEmail] = useState("")
   const [getContrasena, setContrasena] = useState("")
   const [getUsers, setUsers] = useState([])
