@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 import Card from "../components/Card"
@@ -5,6 +6,8 @@ import banner from "../assets/video/banner.mp4"
 import agenda from "../assets/img/agenda.png"
 
 const Home = () => {
+    const navigate = useNavigate()
+
     return (
         <div style={{ fontFamily: "'Garamond', 'Times New Roman', serif", margin: 0 }}>
             <Header />
@@ -34,6 +37,7 @@ const Home = () => {
                         imagen={agenda}
                         titulo="Agendamiento de citas"
                         descripcion="Inicia sesión para ver disponibilidad."
+                        onClick={() => {window.scrollTo(0, 0), navigate("/login")}}
                     />
                 </div>
             </section>

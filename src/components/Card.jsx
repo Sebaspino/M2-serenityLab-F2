@@ -1,19 +1,22 @@
-const Card = ({ imagen, titulo, descripcion, nombre, apellido, telefono, email, direccion, rol, onLogout }) => {
+const Card = ({ imagen, titulo, descripcion, nombre, apellido, telefono, email, direccion, rol, onLogout, onClick }) => {
 
   const iniciales = nombre
     ? (nombre[0] + (apellido ? apellido[0] : "")).toUpperCase()
     : null
 
   return (
-    <div style={{
-      background: "white",
-      borderRadius: "16px",
-      padding: "30px",
-      width: "320px",
-      textAlign: "center",
-      boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
-    }}>
-
+    <div
+      onClick={onClick}
+      style={{
+        background: "white",
+        borderRadius: "16px",
+        padding: "30px",
+        width: "320px",
+        textAlign: "center",
+        boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+        cursor: onClick ? "pointer" : "default",
+      }}
+    >
       {iniciales ? (
         <>
           <div style={{
@@ -31,43 +34,35 @@ const Card = ({ imagen, titulo, descripcion, nombre, apellido, telefono, email, 
             </span>
           </div>
 
-          {/* Nombre completo */}
           <h3 style={{ color: "#333", fontSize: "1.1rem", fontWeight: 700, marginBottom: "4px" }}>
             {nombre} {apellido}
           </h3>
 
-          {/* Rol */}
           <p style={{ color: "#e91e8c", fontSize: "0.85rem", marginBottom: "16px" }}>
             {rol || "Estudiante"}
           </p>
 
-          {/* Divider */}
           <hr style={{ border: "none", borderTop: "1px solid #eee", marginBottom: "16px" }} />
 
-          {/* Info */}
           <div style={{ textAlign: "left", fontSize: "0.9rem", color: "#555", display: "flex", flexDirection: "column", gap: "10px" }}>
-            
             {email && (
               <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                 <span>✉️</span>
                 <span>{email}</span>
               </div>
             )}
-
             {telefono && (
               <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                 <span>📞</span>
                 <span>{telefono}</span>
               </div>
             )}
-
             {direccion && (
               <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                 <span>📍</span>
                 <span>{direccion}</span>
               </div>
             )}
-
           </div>
 
           <button
@@ -105,7 +100,6 @@ const Card = ({ imagen, titulo, descripcion, nombre, apellido, telefono, email, 
           </p>
         </>
       )}
-
     </div>
   )
 }
