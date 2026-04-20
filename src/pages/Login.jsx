@@ -10,78 +10,99 @@ const Login = () => {
 
   function fetchUsers() {
     fetch(endpoints.estudiantes)
-      .then((response) => response.json())
+      .then((res) => res.json())
       .then((data) => setUsers(data))
-      .catch((error) => console.log(error))
+      .catch((err) => console.log(err))
   }
 
-  useEffect(() => {
-    fetchUsers()
-  }, [])
+  useEffect(() => { fetchUsers() }, [])
 
-
-  const findUser = () => {
-    let user = getUsers.find((item) => getEmail === item.email && getContrasena === item.contrasena)
-    return user
-  }
+  const findUser = () =>
+    getUsers.find((item) => getEmail === item.email && getContrasena === item.contrasena)
 
   function signIn() {
-    console.log(findUser())
-    if (findUser()) {
-      saveLocalStorage("estudiantes", findUser())
-      redirect(findUser().nombre + " " + findUser().apellido + " Bienvenido al sistema...", "/dashboard", "success")
+    const user = findUser()
+    if (user) {
+      saveLocalStorage("estudiantes", user)
+      redirect(user.nombre + " " + user.apellido + " Bienvenido al sistema...", "/dashboard", "success")
     } else {
       redirect("El correo o la contraseña son incorrectos...", "/", "error")
     }
   }
 
   return (
-    <div style={{ minHeight: "100vh", background: "#0f172a", display: "flex", alignItems: "center", justifyContent: "center", padding: "2rem" }}>
-      <div style={{ width: "100%", maxWidth: "400px" }}>
+    <div style={{
+      minHeight: "100vh",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+      padding: "1rem",
+      boxSizing: "border-box",
+      fontFamily: "'Garamond', 'Times New Roman', serif",
+    }}>
+      <div style={{
+        background: "linear-gradient(to right, #f35c7d, #a961f1)",
+        padding: "60px",
+        borderRadius: "20px",
+        boxShadow: "0 8px 16px rgba(0,0,0,0.3)",
+        width: "100%",
+        maxWidth: "500px",
+        boxSizing: "border-box",
+        textAlign: "center",
+      }}>
+        <h1 style={{ color: "white", fontSize: "2.25rem", fontWeight: 700, marginBottom: "1.5rem" }}>
+          Inicio de sesión
+        </h1>
 
-        <div style={{ textAlign: "center", marginBottom: "2rem" }}>
-          <h1 style={{ color: "#f1f5f9", fontSize: "22px", fontWeight: 500, margin: "0 0 6px" }}>Serenity Lab</h1>
-          <p style={{ color: "#94a3b8", fontSize: "14px", margin: 0 }}>Inicia sesión en tu cuenta</p>
-        </div>
+        <div style={{ display: "flex", flexDirection: "column", gap: "15px", alignItems: "center" }}>
 
-        <div style={{ background: "#1e293b", border: "0.5px solid #334155", borderRadius: "16px", padding: "2rem" }}>
+          <label style={{ alignSelf: "flex-start", color: "white", fontWeight: 500, fontSize: "1.125rem" }}>
+            Usuario:
+          </label>
+          <input
+            onChange={(e) => setEmail(e.target.value)}
+            type="email"
+            placeholder="Ingrese su correo"
+            style={{
+              width: "100%", boxSizing: "border-box", padding: "12px",
+              border: "none", borderRadius: "8px",
+              background: "rgba(255,255,255,0.9)",
+              fontSize: "1.125rem", color: "#333",
+            }}
+          />
 
-          <div style={{ marginBottom: "1.25rem" }}>
-            <label style={{ display: "block", fontSize: "13px", fontWeight: 500, color: "#cbd5e1", marginBottom: "6px" }}>
-              Correo electrónico
-            </label>
-            <input
-              onChange={(e) => setEmail(e.target.value)}
-              type="email"
-              placeholder="correo@ejemplo.com"
-              style={{ width: "100%", boxSizing: "border-box", background: "#0f172a", border: "0.5px solid #334155", borderRadius: "8px", padding: "10px 12px", color: "#f1f5f9", fontSize: "14px", outline: "none" }}
-            />
-          </div>
-
-          <div style={{ marginBottom: "1.5rem" }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "6px" }}>
-              <label style={{ fontSize: "13px", fontWeight: 500, color: "#cbd5e1" }}>Contraseña</label>
-              <a href="#" style={{ fontSize: "12px", color: "#818cf8", textDecoration: "none" }}>¿Olvidaste tu contraseña?</a>
-            </div>
-            <input
-              onChange={(e) => setContrasena(e.target.value)}
-              type="password"
-              placeholder="••••••••"
-              style={{ width: "100%", boxSizing: "border-box", background: "#0f172a", border: "0.5px solid #334155", borderRadius: "8px", padding: "10px 12px", color: "#f1f5f9", fontSize: "14px", outline: "none" }}
-            />
-          </div>
+          <label style={{ alignSelf: "flex-start", color: "white", fontWeight: 500, fontSize: "1.125rem" }}>
+            Contraseña
+          </label>
+          <input
+            onChange={(e) => setContrasena(e.target.value)}
+            type="password"
+            placeholder="Ingrese su contraseña"
+            style={{
+              width: "100%", boxSizing: "border-box", padding: "12px",
+              border: "none", borderRadius: "8px",
+              background: "rgba(255,255,255,0.9)",
+              fontSize: "1.125rem", color: "#333",
+            }}
+          />
 
           <button
             onClick={signIn}
             type="button"
-            style={{ width: "100%", background: "#6366f1", color: "white", border: "none", borderRadius: "8px", padding: "11px", fontSize: "14px", fontWeight: 500, cursor: "pointer" }}
+            style={{
+              background: "#333", color: "white",
+              padding: "0.9rem 2.2rem", border: "none",
+              borderRadius: "50px", fontSize: "1.125rem",
+              fontWeight: 500, cursor: "pointer",
+              marginTop: "20px", width: "auto",
+              transition: "background 0.3s ease",
+            }}
+            onMouseOver={(e) => e.target.style.background = "rgb(200,35,110)"}
+            onMouseOut={(e) => e.target.style.background = "#333"}
           >
-            Iniciar sesión
+            Iniciar Sesión
           </button>
-
-          <p style={{ textAlign: "center", fontSize: "13px", color: "#64748b", margin: "1.25rem 0 0" }}>
-            ¿No tienes cuenta? <a href="#" style={{ color: "#818cf8", textDecoration: "none", fontWeight: 500 }}>Regístrate</a>
-          </p>
 
         </div>
       </div>
