@@ -2,9 +2,10 @@ import { useState, useEffect } from "react"
 import { redirect } from "../helpers/alerts"
 import { endpoints } from "../services/api"
 import { saveLocalStorage } from "../helpers/local-storage"
+import NavBarHome from "../components/NavBarHome"
+import Footer from "../components/Footer"
 
 const Login = () => {
-  <NavBarHome />
   const [getEmail, setEmail] = useState("")
   const [getContrasena, setContrasena] = useState("")
   const [getUsers, setUsers] = useState([])
@@ -32,6 +33,9 @@ const Login = () => {
   }
 
   return (
+    <>
+    <NavBarHome />
+
     <div style={{
       minHeight: "100vh",
       display: "flex",
@@ -41,6 +45,7 @@ const Login = () => {
       padding: "1rem",
       boxSizing: "border-box",
       fontFamily: "'Garamond', 'Times New Roman', serif",
+      background: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)",
     }}>
       <div style={{
         background: "linear-gradient(to right, #f35c7d, #a961f1)",
@@ -108,6 +113,8 @@ const Login = () => {
         </div>
       </div>
     </div>
+    <Footer />
+    </>
   )
 }
 

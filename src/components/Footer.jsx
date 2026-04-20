@@ -1,11 +1,23 @@
 const Footer = () => {
     return (
-        <footer style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-around", gap: "1.5rem", background: "#fff", padding: "2rem", fontFamily: "'Garamond', serif" }}>
+        <footer style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-around", gap: "16px", background: "#fff", padding: "2rem", fontFamily: "'Garamond', serif" }}>
             <div>
                 <h4 style={{ fontSize: "1.125rem", marginBottom: "0.8rem" }}>Contacto</h4>
-                <img src="../iconos/gps.png" alt="" style={{ height: 20, marginRight: 6, verticalAlign: "middle" }} />Bello: Diagonal 50a #38-20, piso 5.<br />
-                <img src="../iconos/correo.png" alt="" style={{ height: 20, marginRight: 6, verticalAlign: "middle" }} />bienestarestudiantil@cesde.edu.co<br />
-                <img src="../iconos/telefono.png" alt="" style={{ height: 20, marginRight: 6, verticalAlign: "middle" }} />316 354 66 17
+
+                <div style={{ display: "flex", alignItems: "center", marginBottom: "8px" }}>
+                    <img src="src/assets/iconos/gps.png" alt="" style={{ height: 20, marginRight: 6 }} />
+                    <span>Bello: Diagonal 50a #38-20, piso 5.</span>
+                </div>
+
+                <div style={{ display: "flex", alignItems: "center", marginBottom: "8px" }}>
+                    <img src="src/assets/iconos/correo.png" alt="" style={{ height: 20, marginRight: 6 }} />
+                    <span>bienestarestudiantil@cesde.edu.co</span>
+                </div>
+
+                <div style={{ display: "flex", alignItems: "center" }}>
+                    <img src="src/assets/iconos/telefono.png" alt="" style={{ height: 20, marginRight: 6 }} />
+                    <span>316 354 66 17</span>
+                </div>
             </div>
             <div>
                 <h4 style={{ fontSize: "1.125rem", marginBottom: "0.8rem" }}>Ubicación</h4>
@@ -17,11 +29,15 @@ const Footer = () => {
             </div>
             <div>
                 <h4 style={{ fontSize: "1.125rem", marginBottom: "0.8rem" }}>Redes sociales</h4>
-                <a href="https://co.linkedin.com/company/cesde-formaci%C3%B3n-t%C3%A9cnica"><img src="../iconos/linkedin.png" alt="LinkedIn" style={{ height: 20, marginRight: 8 }} /></a>
-                <a href="https://www.facebook.com/Cesde/?locale=es_LA"><img src="../iconos/facebook.png" alt="Facebook" style={{ height: 20, marginRight: 8 }} /></a>
-                <a href="https://www.instagram.com/cesdeoficial/?hl=es"><img src="../iconos/instagram.png" alt="Instagram" style={{ height: 20, marginRight: 8 }} /></a>
-                <a href="https://www.youtube.com/c/SomosCESDE"><img src="../iconos/youtube.png" alt="YouTube" style={{ height: 20 }} /></a>
+                <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+
+                    <a href="https://co.linkedin.com/company/cesde-formaci%C3%B3n-t%C3%A9cnica"><img src="src\assets\iconos\linkedin.png" alt="LinkedIn" style={{ height: 20, marginRight: 8 }} /></a>
+                    <a href="https://www.facebook.com/Cesde/?locale=es_LA"><img src="src\assets\iconos\facebook.png" alt="Facebook" style={{ height: 20, marginRight: 8 }} /></a>
+                    <a href="https://www.instagram.com/cesdeoficial/?hl=es"><img src="src\assets\iconos\instagram.png" alt="Instagram" style={{ height: 20, marginRight: 8 }} /></a>
+                    <a href="https://www.youtube.com/c/SomosCESDE"><img src="src\assets\iconos\youtube.png" alt="YouTube" style={{ height: 20 }} /></a>
+                </div>
             </div>
+
         </footer>
     )
 }

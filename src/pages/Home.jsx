@@ -1,5 +1,6 @@
 import NavBarHome from "../components/NavBarHome"
 import Footer from "../components/Footer"
+import banner from "../assets/video/banner.mp4"
 
 const Home = () => {
     return (
@@ -8,7 +9,7 @@ const Home = () => {
 
             <section style={{ position: "relative", height: "100vh", overflow: "hidden" }}>
                 <video autoPlay loop muted style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: -1 }}>
-                    <source src="src\assets\video\banner.mp4" type="video/mp4" />
+                <source src={banner} type="video/mp4" />
                 </video>
             </section>
 
@@ -30,7 +31,7 @@ const Home = () => {
                 <div style={{ display: "flex", justifyContent: "center" }}>
                     <div style={{ background: "#fff", borderRadius: "8px", padding: "1.5rem", maxWidth: "350px", boxShadow: "0 2px 8px rgba(0,0,0,0.15)" }}>
                         <a href="/login">
-                            <img src="../img/agenda.png" alt="Agendamiento de citas" style={{ width: "100%", maxWidth: "200px", margin: "0 auto 1rem", display: "block" }} />
+                            <img src="src\assets\img\agenda.png" alt="Agendamiento de citas" style={{ width: "100%", maxWidth: "200px", margin: "0 auto 1rem", display: "block" }} />
                         </a>
                         <h3 style={{ color: "rgb(238,44,130)", fontSize: "1.125rem", marginBottom: "0.8rem" }}>Agendamiento de citas</h3>
                         <p style={{ fontSize: "1.125rem", lineHeight: 1.6, color: "#333" }}>
