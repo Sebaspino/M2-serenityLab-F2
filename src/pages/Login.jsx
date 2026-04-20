@@ -28,7 +28,7 @@ const Login = () => {
       saveLocalStorage("estudiantes", user)
       redirect(user.nombre + " " + user.apellido + " Bienvenido al sistema...", "/dashboard", "success")
     } else {
-      redirect("El correo o la contraseña son incorrectos...", "/", "error")
+      redirect("El correo o la contraseña son incorrectos...", "/login", "error")
     }
   }
 
