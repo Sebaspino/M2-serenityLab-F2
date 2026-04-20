@@ -16,26 +16,24 @@ const Home = () => {
             </section>
 
             <section style={{ padding: "3rem 2rem", textAlign: "center" }}>
-                <h1 style={{ color: "rgb(238,44,130)", fontSize: "1.75rem", marginBottom: "1.5rem" }}>SerenityLab</h1>
-                <p style={{ fontSize: "1.125rem", lineHeight: 1.7, marginBottom: "1rem", color: "#333" }}>
+                <p style={{ fontSize: "1.2rem", lineHeight: 1.7, marginBottom: "1rem", color: "#333" }}>
                     En SerenityLab creemos en el poder de la escucha activa y en la importancia de promover
                     acciones que favorezcan el bienestar integral de nuestros estudiantes.
                 </p>
-                <p style={{ fontSize: "1.125rem", lineHeight: 1.7, color: "#333" }}>
+                <p style={{ fontSize: "1.2rem", lineHeight: 1.7, color: "#333" }}>
                     Este sitio web ha sido creado especialmente para promover y fortalecer el bienestar integral
                     de los estudiantes del CESDE. Ofrece un espacio accesible y seguro donde podrás encontrar
                     recursos, herramientas y apoyo profesional para tu desarrollo emocional, mental y académico.
                 </p>
             </section>
 
-            {/* ✅ Aquí se reemplazó el div hardcodeado por el componente Card */}
             <section style={{ padding: "3rem 2rem", background: "rgba(238,44,130,0.9)", textAlign: "center" }}>
-                <h2 style={{ color: "#333", fontSize: "1.75rem", marginBottom: "1.5rem" }}>Conoce nuestros servicios</h2>
+                <h2 style={{ color: "#333", fontSize: "2rem", marginBottom: "1.5rem" }}>Conoce nuestros servicios</h2>
                 <div style={{ display: "flex", justifyContent: "center", gap: "24px", flexWrap: "wrap" }}>
                     <Card
                         imagen={agenda}
                         titulo="Agendamiento de citas"
-                        descripcion="Accede con tu cuenta para consultar la disponibilidad de nuestro equipo de profesionales."
+                        descripcion="Inicia sesión para ver disponibilidad."
                     />
                 </div>
             </section>

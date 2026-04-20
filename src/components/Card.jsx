@@ -16,7 +16,6 @@ const Card = ({ imagen, titulo, descripcion, nombre, apellido, telefono, email, 
 
       {iniciales ? (
         <>
-          {/* Avatar */}
           <div style={{
             width: "70px",
             height: "70px",
@@ -71,7 +70,6 @@ const Card = ({ imagen, titulo, descripcion, nombre, apellido, telefono, email, 
 
           </div>
 
-          {/* Botón cerrar sesión */}
           <button
             onClick={onLogout}
             style={{

@@ -104,7 +104,7 @@ const Login = () => {
               marginTop: "20px", width: "auto",
               transition: "background 0.3s ease",
             }}
-            onMouseOver={(e) => e.target.style.background = "rgb(200,35,110)"}
+            onMouseOver={(e) => e.target.style.background = "rgba(200, 35, 109, 0.05)"}
             onMouseOut={(e) => e.target.style.background = "#333"}
           >
             Iniciar Sesión

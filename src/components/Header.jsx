@@ -8,9 +8,9 @@ const Header = () => {
       <div>
         <img src="src\assets\img\isotipo.png" alt="Logo SerenityLab" style={{ maxHeight: "60px", cursor: "pointer" }} onClick={() => navigate("/")} />
       </div>
-      <nav style={{ display: "flex", gap: "2rem" }}>
-        <a href="/psicologos" style={{ textDecoration: "none", color: "#333", fontWeight: 500, fontSize: "1.125rem" }}>Psicólogos</a>
-      </nav>
+      <div style={{ display: "flex", gap: "2rem" }}>
+        <p style={{ textDecoration: "none", color: "#333", fontWeight: 500, alignItems: "center",fontSize: "2rem" }}> SerenityLab</p>
+      </div>
       <div>
         <img src="src\assets\iconos\acceso.png" alt="Iniciar sesión" style={{ maxHeight: "40px", cursor: "pointer" }} onClick={() => navigate("/login")} />
       </div>
