@@ -31,10 +31,10 @@ const Footer = () => {
                 <h4 style={{ fontSize: "1.3rem", marginBottom: "0.8rem" }}>Redes sociales</h4>
                 <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
 
-                    <a href="https://co.linkedin.com/company/cesde-formaci%C3%B3n-t%C3%A9cnica"><img src="src\assets\iconos\linkedin.png" alt="LinkedIn" style={{ height: 20, marginRight: 8 }} /></a>
-                    <a href="https://www.facebook.com/Cesde/?locale=es_LA"><img src="src\assets\iconos\facebook.png" alt="Facebook" style={{ height: 20, marginRight: 8 }} /></a>
-                    <a href="https://www.instagram.com/cesdeoficial/?hl=es"><img src="src\assets\iconos\instagram.png" alt="Instagram" style={{ height: 20, marginRight: 8 }} /></a>
-                    <a href="https://www.youtube.com/c/SomosCESDE"><img src="src\assets\iconos\youtube.png" alt="YouTube" style={{ height: 20 }} /></a>
+                    <a href="https://co.linkedin.com/company/cesde-formaci%C3%B3n-t%C3%A9cnica"><img src="src/assets/iconos/linkedin.png" alt="LinkedIn" style={{ height: 20, marginRight: 8 }} /></a>
+                    <a href="https://www.facebook.com/Cesde/?locale=es_LA"><img src="src/assets/iconos/facebook.png" alt="Facebook" style={{ height: 20, marginRight: 8 }} /></a>
+                    <a href="https://www.instagram.com/cesdeoficial/?hl=es"><img src="src/assets/iconos/instagram.png" alt="Instagram" style={{ height: 20, marginRight: 8 }} /></a>
+                    <a href="https://www.youtube.com/c/SomosCESDE"><img src="src/assets/iconos/youtube.png" alt="YouTube" style={{ height: 20 }} /></a>
                 </div>
             </div>
 
