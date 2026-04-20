@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { redirect } from "../helpers/alerts"
-import { end_points } from "../services/api"
+import { endpoints } from "../services/api"
 import { saveLocalStorage } from "../helpers/local-storage"
 
 const Login = () => {
@@ -9,7 +9,7 @@ const Login = () => {
   const [getUsers, setUsers] = useState([])
 
   function fetchUsers() {
-    fetch(end_points.users)
+    fetch(endpoints.estudiantes)
       .then((response) => response.json())
       .then((data) => setUsers(data))
       .catch((error) => console.log(error))
