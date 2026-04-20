@@ -1,6 +1,7 @@
 import { getLocalStorage, removeLocalStorage } from "../helpers/local-storage"
 import { initials } from "../helpers/generators"
 import { redirect } from "../helpers/alerts"
+
 let auth = getLocalStorage("estudiantes")
 
 const NavBar = () => {
@@ -11,9 +12,9 @@ const NavBar = () => {
     return (
         <section>
             <div>
-                <h2>Iniciales{initials(auth.fullName)}</h2>
-                <p>Nombre:{auth.fullName}</p>
-                <p>Rol:{auth.role}</p>
+                <h2>Iniciales: {initials(auth.fullName)}</h2>
+                <p>Nombre: {auth.fullName}</p>
+                <p>Rol: {auth.role}</p>
             </div>
             <nav>
                 <a href="">Login</a>

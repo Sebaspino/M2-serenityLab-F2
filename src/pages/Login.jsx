@@ -28,7 +28,7 @@ const Login = () => {
   function signIn() {
     console.log(findUser())
     if (findUser()) {
-      saveLocalStorage("user", findUser())
+      saveLocalStorage("estudiantes", findUser())
       redirect(findUser().fullName + " Bienvenido al sistema...", "/dashboard", "success")
     } else {
       redirect("El correo o la contraseña son incorrectos...", "/", "error")
@@ -36,74 +36,67 @@ const Login = () => {
   }
 
   return (
-    <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
-      <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-        <img
-          alt="Your Company"
-          src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
-          className="mx-auto h-10 w-auto"
-        />
-        <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-white">Sign in to your account</h2>
-      </div>
-
-      <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-        <form action="#" method="POST" className="space-y-6">
-          <div>
-            <label htmlFor="email" className="block text-sm/6 font-medium text-gray-100">
-              Email address
-            </label>
-            <div className="mt-2">
-              <input onChange={(e) => { setEmail(e.target.value) }}
-                id="email"
-                name="email"
-                type="email"
-                required
-                autoComplete="email"
-                className="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"
-              />
+    <div class="flex h-full grow flex-col">
+      <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-6 lg:px-10 py-4 bg-white dark:bg-slate-900">
+        <div class="flex items-center gap-3 text-primary">
+          <h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight">Nexus ATS</h2>
+        </div>
+        <div class="flex items-center gap-4">
+          <a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="#">Help Center</a>
+        </div>
+      </header>
+      <main class="flex-1 flex items-center justify-center p-6">
+        <div class="w-full max-w-md bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 p-8 lg:p-10">
+          <div class="flex flex-col items-center mb-8">
+            <div class="bg-primary/10 p-3 rounded-full mb-4">
+              <span class="material-symbols-outlined text-primary text-3xl">login</span>
             </div>
+            <h1 class="text-slate-900 dark:text-slate-100 text-2xl font-bold tracking-tight">Welcome Back</h1>
+            <p class="text-slate-500 dark:text-slate-400 text-sm mt-2 text-center">Manage your applications and profile in one place.</p>
           </div>
-
-          <div>
-            <div className="flex items-center justify-between">
-              <label htmlFor="password" className="block text-sm/6 font-medium text-gray-100">
-                Password
-              </label>
-              <div className="text-sm">
-                <a href="#" className="font-semibold text-indigo-400 hover:text-indigo-300">
-                  Forgot password?
-                </a>
+          <form class="space-y-5">
+            <div class="flex flex-col gap-2">
+              <label class="text-slate-700 dark:text-slate-300 text-sm font-medium" for="email">Email Address</label>
+              <div class="relative">
+                <input onChange={(e) => { setEmail(e.target.value) }} class="w-full px-4 py-3 rounded border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none placeholder:text-slate-400 dark:placeholder:text-slate-500" id="email" name="email" placeholder="name@company.com" required="" type="email" />
               </div>
             </div>
-            <div className="mt-2">
-              <input onChange={(e) => { setPassword(e.target.value) }}
-                id="password"
-                name="password"
-                type="password"
-                required
-                autoComplete="current-password"
-                className="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"
-              />
+            <div class="flex flex-col gap-2">
+              <div class="flex justify-between items-center">
+                <label class="text-slate-700 dark:text-slate-300 text-sm font-medium" for="password">Password</label>
+                <a class="text-xs text-primary font-medium hover:underline" href="#">Forgot password?</a>
+              </div>
+              <div class="relative flex items-center">
+                <input onChange={(e) => { setPassword(e.target.value) }} class="w-full px-4 py-3 rounded border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none placeholder:text-slate-400 dark:placeholder:text-slate-500" id="password" name="password" placeholder="Enter your password" required="" type="password" />
+                <button class="absolute right-3 text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300" type="button">
+                  <span class="material-symbols-outlined text-[20px]">visibility</span>
+                </button>
+              </div>
             </div>
-          </div>
-
-          <div>
-            <button onClick={() => { signIn() }}
-              type="button"
-              className="flex w-full justify-center rounded-md bg-indigo-500 px-3 py-1.5 text-sm/6 font-semibold text-white hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
-            >
-              Sign in
+            <div class="flex items-center gap-2">
+              <input class="w-4 h-4 text-primary border-slate-300 dark:border-slate-700 rounded focus:ring-primary/20" id="remember" type="checkbox" />
+              <label class="text-sm text-slate-600 dark:text-slate-400" for="remember">Remember this device</label>
+            </div>
+            <button onClick={() => { signIn() }} class="w-full bg-primary hover:bg-primary/90 text-dark font-semibold py-3 px-4 border-black rounded flex items-center justify-center gap-2" type="button">
+              Sign In
+              <span class="material-symbols-outlined text-sm">arrow_forward</span>
             </button>
+          </form>
+          <div class="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800 text-center">
+            <p class="text-sm text-slate-600 dark:text-slate-400">
+              Don't have an account?
+              <a class="text-primary font-bold hover:underline" href="#">Register now</a>
+            </p>
           </div>
-        </form>
-
-        <p className="mt-10 text-center text-sm/6 text-gray-400">
-          Not a member?{' '}
-          <a href="#" className="font-semibold text-indigo-400 hover:text-indigo-300">
-            Start a 14 day free trial
-          </a>
-        </p>
-      </div>
+        </div>
+      </main>
+      <footer class="px-10 py-6 text-center text-slate-400 dark:text-slate-600 text-xs">
+        <p>© 2024 Nexus Candidate Tracking System. All rights reserved.</p>
+        <div class="flex justify-center gap-4 mt-2">
+          <a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+          <a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+        </div>
+      </footer>
     </div>
   )
 }
