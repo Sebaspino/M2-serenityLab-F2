@@ -1,11 +1,11 @@
 import { getLocalStorage, removeLocalStorage } from "../helpers/local-storage"
 import { initials } from "../helpers/generators"
 import { redirect } from "../helpers/alerts"
-let auth = getLocalStorage("user")
+let auth = getLocalStorage("estudiantes")
 
 const NavBar = () => {
     function logout() {
-        removeLocalStorage("user")
+        removeLocalStorage("estudiantes")
         redirect("Cerrando sesion...", "/", "info")
     }
     return (
