@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { redirect } from "../helpers/alerts"
 import { endpoints } from "../services/api"
 import { saveLocalStorage } from "../helpers/local-storage"
-import NavBarHome from "../components/NavBarHome"
+import Header from "../components/Header"
 import Footer from "../components/Footer"
 
 const Login = () => {
@@ -34,7 +34,7 @@ const Login = () => {
 
   return (
     <>
-    <NavBarHome />
+    <Header />
 
     <div style={{
       minHeight: "100vh",

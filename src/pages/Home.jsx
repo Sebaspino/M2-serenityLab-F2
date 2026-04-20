@@ -1,15 +1,17 @@
-import NavBarHome from "../components/NavBarHome"
+import Header from "../components/Header"
 import Footer from "../components/Footer"
+import Card from "../components/Card"
 import banner from "../assets/video/banner.mp4"
+import agenda from "../assets/img/agenda.png"
 
 const Home = () => {
     return (
         <div style={{ fontFamily: "'Garamond', 'Times New Roman', serif", margin: 0 }}>
-            <NavBarHome />
+            <Header />
 
             <section style={{ position: "relative", height: "100vh", overflow: "hidden" }}>
                 <video autoPlay loop muted style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: -1 }}>
-                <source src={banner} type="video/mp4" />
+                    <source src={banner} type="video/mp4" />
                 </video>
             </section>
 
@@ -26,18 +28,15 @@ const Home = () => {
                 </p>
             </section>
 
+            {/* ✅ Aquí se reemplazó el div hardcodeado por el componente Card */}
             <section style={{ padding: "3rem 2rem", background: "rgba(238,44,130,0.9)", textAlign: "center" }}>
                 <h2 style={{ color: "#333", fontSize: "1.75rem", marginBottom: "1.5rem" }}>Conoce nuestros servicios</h2>
-                <div style={{ display: "flex", justifyContent: "center" }}>
-                    <div style={{ background: "#fff", borderRadius: "8px", padding: "1.5rem", maxWidth: "350px", boxShadow: "0 2px 8px rgba(0,0,0,0.15)" }}>
-                        <a href="/login">
-                            <img src="src\assets\img\agenda.png" alt="Agendamiento de citas" style={{ width: "100%", maxWidth: "200px", margin: "0 auto 1rem", display: "block" }} />
-                        </a>
-                        <h3 style={{ color: "rgb(238,44,130)", fontSize: "1.125rem", marginBottom: "0.8rem" }}>Agendamiento de citas</h3>
-                        <p style={{ fontSize: "1.125rem", lineHeight: 1.6, color: "#333" }}>
-                            Accede con tu cuenta para consultar la disponibilidad de nuestro equipo de profesionales.
-                        </p>
-                    </div>
+                <div style={{ display: "flex", justifyContent: "center", gap: "24px", flexWrap: "wrap" }}>
+                    <Card
+                        imagen={agenda}
+                        titulo="Agendamiento de citas"
+                        descripcion="Accede con tu cuenta para consultar la disponibilidad de nuestro equipo de profesionales."
+                    />
                 </div>
             </section>
 
