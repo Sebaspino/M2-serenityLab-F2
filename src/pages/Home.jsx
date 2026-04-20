@@ -37,7 +37,7 @@ const Home = () => {
                         imagen={agenda}
                         titulo="Agendamiento de citas"
                         descripcion="Inicia sesión para ver disponibilidad."
-                        onClick={() => {window.scrollTo(0, 0), navigate("/login")}}
+                        onClick={() => {window.scrollTo(0, 0); navigate("/login")}}
                     />
                 </div>
             </section>
